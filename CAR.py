@@ -1,7 +1,7 @@
 import numpy as np
 import math as m
 import cv2
-from key_check import key_check,key_press
+from key_check import key_press
 from controller import * # backend that contains the code for manual control 
 from model_runner import model_runner # backend that contains the code for running the trained models.
 import threading # we use threading to run stuff asynchronously 
