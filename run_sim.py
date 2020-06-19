@@ -174,7 +174,7 @@ if __name__ == "__main__":
     parser.add_argument('--model', type=str, default="steering", help='type of model', choices=model_list)
     parser.add_argument('--test', type=bool, default = False, help='agent uses learned model to navigate env')
     parser.add_argument('--manual_control', type=str, default="keyboard", help='port to use for websockets')
-    parser.add_argument('--log_name', type=float, default="_", help='constant throttle for driving')
+    parser.add_argument('--log_name', type=str, default="_", help='constant throttle for driving')
     parser.add_argument('--env_name', type=str, default='generated_road', help='name of donkey sim environment', choices=env_list)
 
     args = parser.parse_args()
