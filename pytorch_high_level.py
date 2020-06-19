@@ -58,9 +58,9 @@ def fit(net,X,Y,train_log,optimizer,loss_function,validation_set,BATCH_SIZE,EPOC
             del batch_X
             batch_Y = None
             del batch_Y
-            # if i%100==0:
-            #     train_average_loss += float(train_loss.cpu())
-            #     train_counter += 1
+            if i%100==0:
+                train_average_loss += float(train_loss.cpu())
+                train_counter += 1
             train_loss = None
             del train_loss
         #outsample data
@@ -77,18 +77,18 @@ def fit(net,X,Y,train_log,optimizer,loss_function,validation_set,BATCH_SIZE,EPOC
             del batch_X
             batch_Y = None
             del batch_Y
-            # if i%10==0:
-            #     val_average_loss += float(val_loss.cpu())
-            #     val_counter += 1
+            if i%10==0:
+                val_average_loss += float(val_loss.cpu())
+                val_counter += 1
             val_loss = None
             del val_loss
             # print('val loss: ',float(val_loss))
         torch.cuda.empty_cache()
         if(train_counter==0):
             train_counter = 1
-        # if(val_counter ==0):
-        #     val_counter = 1
-        # train_log.append([train_average_loss/train_counter,val_average_loss/val_counter]) # just store the last values for now
+        if(val_counter ==0):
+            val_counter = 1
+        train_log.append([train_average_loss/train_counter,val_average_loss/val_counter]) # just store the last values for now
 
         optimizer = None
         loss_function = None
