@@ -135,6 +135,7 @@ def create_image_data(args):
     del output_r
 
 def create_steering_data(args):
+    N = 15
     data = np.load('MUSHR_320x240_{}.npy'.format(args.dataset_name),allow_pickle=True)
     output_c = []
     output_l = []
@@ -240,6 +241,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='ddqn')
     parser.add_argument('--dataset_name', type=str, default="4", help='suffix for the dataset name')
     parser.add_argument('--model', type=str, default="steering", help='type of model', choices=model_list)
+    args = parser.parse_args()
 
     if(args.model=="steering"):
         create_steering_data(args)
