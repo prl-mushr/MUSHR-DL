@@ -1,6 +1,4 @@
 import time
-import win32api as wapi
-import win32con
 import numpy as np
 from pynput import keyboard, mouse
 from pynput.mouse import Controller
