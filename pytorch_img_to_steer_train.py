@@ -13,7 +13,7 @@ WIDTH = 320
 CHANNELS = 1
 model_name = 'steering.h5'
 
-net = Net(HEIGHT,WIDTH,CHANNELS).to(device)
+net = Net(HEIGHT,WIDTH,CHANNELS).to(device) # define the network and send it to the gpu/cpu
 # loss_function = nn.MSELoss()
 # checkpoint = torch.load(model_name) # uncomment this to train an existing model
 # net = checkpoint['net']
