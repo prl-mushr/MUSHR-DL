@@ -20,16 +20,9 @@ class driver():
         self.WHEELBASE = 1.56 # wheelbase of the car
         self.dt = 0 # time step
         self.cam_img = None
-        # select manual control type
-        if manual_control=='keyboard':
-            print('INFO message: using keyboard control')
-            self.input = keyboard_control()
-        elif manual_control=='remote':
-            print('INFO message: using remote controller')
-            self.input = remote_control()
-        else:
-            print('INFO message: default controller is keyboard')
-            self.input = keyboard_control()
+
+        print('INFO message: using keyboard control')
+        self.input = keyboard_control()
         proc_remote_control = threading.Thread(target=self.input.read_loop) # daemon -> kills thread when main program is stopped
         proc_remote_control.setDaemon(True)
         proc_remote_control.start()
