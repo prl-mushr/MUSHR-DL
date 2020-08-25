@@ -93,7 +93,7 @@ def test_clients(args):
 
     # Start Clients
     for _ in range(0, num_clients):
-        c = SimpleClient(address=(host, port),args=args,poll_socket_sleep_time=0.001)
+        c = SimpleClient(address=(host, port),args=args,poll_socket_sleep_time=0.0)
         clients.append(c)
 
     time.sleep(1)
